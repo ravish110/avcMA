@@ -7,7 +7,8 @@ const firebaseConfig = {
   projectId: "avcma-c1b6f",
   storageBucket: "avcma-c1b6f.appspot.com",
   messagingSenderId: "50061980655",
-  appId: "1:50061980655:web:0f891671264a1cc1ecbc1a"
+  appId: "1:50061980655:web:0f891671264a1cc1ecbc1a",
+  databaseURL: "https://avcma-c1b6f-default-rtdb.firebaseio.com/",
 };
 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
