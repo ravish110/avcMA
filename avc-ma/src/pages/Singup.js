@@ -1,7 +1,6 @@
 import  React, {useState} from 'react';
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { app } from "../firebase";
-import "./signup.css";
 
 
 const auth = getAuth(app);
@@ -15,7 +14,8 @@ const SingupPage = () => {
         createUserWithEmailAndPassword(
             auth,
             email,
-            password
+            password, 
+            console.log(auth,email,password)
         ).then(value => alert("Sucess!!"));
     }
 
@@ -25,6 +25,7 @@ const SingupPage = () => {
 
     return (
         <div className="singup-page">
+            <h1>Singup here</h1>
             <form>
                 <label>Email
                     <input type="email" value={email} onChange={e => setEmail(e.target.value)}/>
@@ -32,8 +33,8 @@ const SingupPage = () => {
                 <label>Password
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
                 </label>
-                <button onClick={signupWithGoogle}>Signin with Gooogle</button>
-                <button onClick={createUser}>Create User</button>
+                <button type='button' onClick={signupWithGoogle}>Signin with Gooogle</button>
+                <button type='button' onClick={createUser}>Create User</button>
             </form>
         </div>
     )
